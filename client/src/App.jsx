@@ -6,7 +6,6 @@ import HomePage from "./components/home/HomePage";
 import { AdminPage } from "./components/Admin/DashBoard/AdminPage.jsx";
 import { AboutUs } from "./components/AboutUs/AboutUs.jsx";
 import { Users } from "./components/Admin/Users/Users.jsx";
-import { Items } from "./components/Admin/Items/Items.jsx";
 import SearchParts from "./components/SearchItems";
 
 function App() {
@@ -17,7 +16,6 @@ function App() {
         <Route path="/home" element={<HomePage />} />
         <Route path="/admin-page" element={<AdminPage />} />
         <Route path="/users" element={<Users />} />
-        <Route path="/items" element={<Items />} />
         <Route path="/about-us" element={<AboutUs />} />
         <Route path="/parts" element={<SearchParts />} />
       </Routes>

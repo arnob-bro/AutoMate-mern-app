@@ -2,7 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import "./navbar.css";
 import axios from "axios";
-import { logoutUser } from "../../Api/auth";
+import { logoutUser } from "../../api/auth";
 
 const Navbar = () => {
   const handleLogout = async () => {
@@ -23,8 +23,8 @@ const Navbar = () => {
   return (
     <div className="navbar">
       <div className="navLogo">
-        <h2>LOGO</h2>
-        <p>Automate</p>
+        {/* <h2>AM</h2> */}
+        <h2>AutoMate</h2>
       </div>
 
       <ul className="navMenu">

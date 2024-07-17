@@ -17,7 +17,7 @@ const HomePage = () => {
       <div className='box1'>
         <h1>Vehicle Services</h1>
         <p>Your Reliable Partner for Vehicle Care</p>
-        <p>Your Vehicle | Our Expertise | Convenient Maintenance</p>
+        <p>Your Vehicle | Our Expertise | Your Comfort</p>
         
         <NavLink to="/book-now" className='bookNow'>
           <h3>BOOK NOW</h3>

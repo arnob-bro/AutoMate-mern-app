@@ -4,7 +4,7 @@
   justify-content: space-between;
   padding: 16px;
   box-shadow: 0 1px 3px -2px black;
-  width: 100vw;
+  /* width: 100vw; */
   height: 150px;
   background: rgb(7, 7, 57);
   align-items: center;
@@ -18,11 +18,15 @@
   color: white;
 }
 
-.navLogo p {
-  color: rgb(231, 152, 5);
-  font-size: 38px;
-  font-weight: 600;
+.navLogo h2{
+  color: rgb(255, 136, 0);
+  font-size: 48px;
+  /* font-weight: 600; */
+  padding: 20px;
+ 
 }
+
+
 
 .navMenu {
   display: flex;
@@ -32,7 +36,10 @@
   color: #ec8383;
   font-size: 20px;
   font-weight: 500;
+  padding-right: 30px;
 }
+
+
 
 .navMenu li {
   display: flex;
@@ -42,6 +49,11 @@
   gap: 3px;
   cursor: pointer;
   color: bisque;
+  
+}
+
+.navMenu li a:hover{
+    color: bisque;
 }
 
 .navbar li a {

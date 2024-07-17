@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import '../components/SearchItems/SearchItems.css'
+import Navbar from './navbar/navbar.jsx';
 
 const SearchParts = () => {
   const [name, setName] = useState("");
@@ -45,7 +47,12 @@ const SearchParts = () => {
   };
 
   return (
-    <div>
+      <div className="Items">
+            <Navbar />
+      
+      
+<div className="searchItemContents">
+            <div className="sidebar">
       <h1>Search Items</h1>
       <form onSubmit={handleSearch}>
         <div>
@@ -83,7 +90,26 @@ const SearchParts = () => {
         <button type="submit">Search</button>
       </form>
 
+
+
+
+
+      </div>
+
+
+
+      <div className="results">
+        
       <h2>Results</h2>
+
+      <ul className="cards">
+        <li>part name</li>
+        <li>vehicle type</li>
+        <li>brand</li>
+        <li>model</li>
+      </ul>
+
+
       <ul>
         {parts.map((part) => (
           <li key={part._id}>
@@ -93,6 +119,7 @@ const SearchParts = () => {
         ))}
       </ul>
 
+
       <div>
         {page > 1 && (
           <button onClick={() => handlePageChange(page - 1)}>Previous</button>
@@ -101,7 +128,18 @@ const SearchParts = () => {
           <button onClick={() => handlePageChange(page + 1)}>Next</button>
         )}
       </div>
-    </div>
+
+
+
+      </div>
+    
+
+
+</div>
+
+
+
+      </div>
   );
 };
 

@@ -25,7 +25,7 @@ export const AdminSidebar = () => {
         </li>
          <div className="underline"></div>
          <li>
-          <NavLink to="/items" className={({ isActive }) => (isActive ? 'active' : '')}>Items</NavLink>
+          <NavLink to="/items" className={({ isActive }) => (isActive ? 'active' : '')}>Parts</NavLink>
         </li>
          <div className="underline"></div>
         <li>

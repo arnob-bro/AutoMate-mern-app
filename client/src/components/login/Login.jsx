@@ -8,8 +8,9 @@ import {
 } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
-import { login, signup } from "../../Api/auth";
+import { login, signup } from "../../api/auth";
 import "./Login.css";
+// import { DoLogin,DoSignup } from "../../api";
 
 export const Login = () => {
   const navigate = useNavigate();
@@ -106,12 +107,12 @@ export const Login = () => {
                 />
               </div>
 
-              <div className="checkboxInput">
+              {/* <div className="checkboxInput">
                 <input type="checkbox" id="checkbox" />
                 <label htmlFor="checkbox" id="rememberMe">
                   Remember me
                 </label>
-              </div>
+              </div> */}
 
               <div className="submit-container">
                 <button type="submit" className="submit">

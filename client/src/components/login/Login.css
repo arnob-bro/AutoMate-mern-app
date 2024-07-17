@@ -27,6 +27,7 @@ body {
     padding: 20px;
     margin-right: 200px;
     margin-left: 200px;
+    justify-content: center;
 }
 
 .leftContainer h1 {
@@ -42,6 +43,7 @@ body {
 
 .container {
     flex: 1;
+    justify-content: center;
     background: white;
     padding: 20px;
     border-radius: 10px;
@@ -219,15 +221,11 @@ body {
 }
 
 @media (max-width: 768px) {
-    .loginpage {
-        flex-direction: column;
-        align-items: center;
-    }
 
     .leftContainer,
     .container {
-        max-width: 100%;
         margin: 10px;
+        max-width: 100%;
     }
 
     .leftContainer h1 {
