@@ -1,7 +1,5 @@
-# AutoMate-mern-app
-
-AutoMate 🚗🔧🛵
-Your Go-to Solution for Vehicle Services and Parts!
+# AutoMate 🚗🔧🛵  
+**Your Go-to Solution for Vehicle Services and Parts!**  
 
 
 
