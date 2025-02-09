@@ -9,7 +9,7 @@ const generateRefreshToken = (id) => {
 const generateAccessToken = (id) => {
   console.log("accessToken is generated with id " + id);
   return jwt.sign({ id }, process.env.JWT_SECRET, {
-    expiresIn: "30m",
+    expiresIn: "1d",
   });
 };
 
