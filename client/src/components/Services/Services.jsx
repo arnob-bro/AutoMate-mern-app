@@ -125,6 +125,11 @@ function Services() {
             <input
               type="date"
               value={bookingDate}
+              min={
+                new Date(new Date().setDate(new Date().getDate() + 1))
+                  .toISOString()
+                  .split("T")[0]
+              }
               onChange={(e) => setBookingDate(e.target.value)}
             />
           </label>

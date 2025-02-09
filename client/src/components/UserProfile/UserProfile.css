@@ -13,6 +13,7 @@
   box-shadow: 0 20px 30px rgba(0, 0, 0, 0.1);
   padding: 40px;
   border-radius: 12px;
+  box-sizing: border-box;
   font-family: "Roboto", sans-serif;
 }
 
@@ -58,6 +59,8 @@
   background-color: #f2f2f2;
   /* Light Gray */
   transition: all 0.3s;
+  width: 100%; /* Ensure uniform width */
+  max-width: 40vw; /* Limit width to prevent excessive stretching */
 }
 
 .UP-form-group input:focus {
@@ -107,9 +110,10 @@
 }
 
 /* Responsive Styles */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .UP-profile-container {
     padding: 20px;
+    width: auto;
   }
 
   .UP-profile-container h1 {
@@ -119,5 +123,9 @@
   .UP-profile-container button {
     font-size: 14px;
     padding: 14px 0;
+  }
+
+  .UP-form-group input {
+    max-width: 80vw; /* Limit width to prevent excessive stretching */
   }
 }

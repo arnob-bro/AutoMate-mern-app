@@ -2,7 +2,9 @@ import axios from "axios";
 import { getToken, getRefreshToken, setAccessToken, logoutUser } from "./auth";
 
 const userURL = "https://auto-mate-mern-app-glrn.vercel.app/user";
-//const userURL = "http://localhost:5000/user";
+// const userURL = "http://localhost:5000/user";
+const baseURl = "https://auto-mate-mern-app-glrn.vercel.app";
+// const baseURl = "http://localhost:5000";
 
 export const refreshAccessToken = async () => {
   const refreshToken = getRefreshToken();
@@ -116,7 +118,7 @@ export const fetchAllServices = async () => {
       localStorage.getItem("userData")
     ).accessToken;
     const response = await axios.get(
-      `https://auto-mate-mern-app-glrn.vercel.app/all-services`,
+      `${baseURl}/all-services`,
 
       {
         headers: {
@@ -131,7 +133,7 @@ export const fetchAllServices = async () => {
       const newToken = await refreshAccessToken(); // Refresh token and retry request
       if (newToken) {
         const response = await axios.get(
-          `https://auto-mate-mern-app-glrn.vercel.app/all-services`,
+          `${baseURl}/all-services`,
 
           {
             headers: {
@@ -195,7 +197,7 @@ export const fetchOrderHistory = async (userId) => {
     };
 
     const response = await axios.get(
-      `https://auto-mate-mern-app-glrn.vercel.app/order/history?userId=${userId}`,
+      `${baseURl}/order/history?userId=${userId}`,
       config
     );
     return response.data;
@@ -211,7 +213,7 @@ export const fetchOrderHistory = async (userId) => {
         };
 
         const response = await axios.get(
-          `https://auto-mate-mern-app-glrn.vercel.app/order/history?userId=${userId}`,
+          `${baseURl}/order/history?userId=${userId}`,
           config
         );
         return response.data;
@@ -239,7 +241,7 @@ export const placeOrder = async (
     };
 
     const response = await axios.post(
-      `https://auto-mate-mern-app-glrn.vercel.app/order/place-order`,
+      `${baseURl}/order/place-order`,
       {
         partId,
         quantity,
@@ -249,6 +251,10 @@ export const placeOrder = async (
       },
       config
     );
+
+    if (response.data.url) {
+      window.location.replace(response.data.url); // Redirect to the payment gateway URL
+    }
 
     return response.data; // Return the response data for further use
   } catch (error) {
@@ -261,10 +267,23 @@ export const placeOrder = async (
           },
         };
 
-        const response = await axios.get(
-          `https://auto-mate-mern-app-glrn.vercel.app/order/history?userId=${userId}`,
+        const response = await axios.post(
+          `${baseURl}/order/place-order`,
+          {
+            partId,
+            quantity,
+            userId,
+            paymentOption,
+            note,
+          },
           config
         );
+
+        if (response.data.url) {
+          // alert(`Order placed successfully.`);
+          window.location.replace(response.data.url); // Redirect to the payment gateway URL
+        }
+
         return response.data;
       }
     }

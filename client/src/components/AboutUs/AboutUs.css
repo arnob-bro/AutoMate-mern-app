@@ -1,50 +1,52 @@
 /* General Styles */
+.about-us {
+  background-color: #f2f2f2; /* Light gray background */
+}
+
 .about-container {
-  font-family: Arial, sans-serif;
-  margin: 0;
+  max-width: 800px; /* Center the content */
+  margin: 0 auto;
   padding: 20px;
   background-color: white;
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
   color: #333;
   line-height: 1.6;
 }
 
 /* Header Styles */
-.about-container h1, .about-container h2 {
+.about-container h1,
+.about-container h2 {
   color: rgb(7, 7, 57);
   padding: 20px;
-  
-  
 }
 
 .about-container h1 {
   font-size: 2.5em;
-  margin-bottom: 0px;
-  padding: 20px;
-padding-bottom: 0px;
+  margin-bottom: 0;
 }
 
 .about-container h2 {
   font-size: 1.8em;
   margin-top: 20px;
-  margin-bottom: 0px;
-padding-bottom: 0px;
+  margin-bottom: 0;
 }
 
 /* Paragraph Styles */
 .about-container p {
   font-size: 1em;
   margin-bottom: 20px;
-padding: 20px;
+  padding: 10px; /* Add padding for better spacing */
 }
 
 /* List Styles */
 .about-container ul {
   list-style: none;
-padding: 20px;
+  padding: 0;
 }
 
 .about-container ul li {
-  background:#e7f3fe;
+  background: #e7f3fe;
   margin: 5px 0;
   padding: 10px;
   border-left: 5px solid #22577a;
@@ -52,14 +54,11 @@ padding: 20px;
 
 /* Contact Info Styles */
 .contact-info {
-  /* background: rgb(231, 152, 5); */
-    
-  /* color:rgb(231, 152, 5); */
-    
-  /* padding: 20px; */
   margin-top: 20px;
   border-radius: 5px;
-  
+  padding: 10px; /* Add padding for better spacing */
+  background: rgb(7, 7, 57);
+  color: white; /* Change text color to white for contrast */
 }
 
 .contact-info p {
@@ -68,26 +67,21 @@ padding: 20px;
   padding-top: 2px;
 }
 
-.contact-info a {
-  color: #fff;
-  text-decoration: none;
+.contact-info p strong {
+  margin-right: 5px; /* Add some space between label and text */
 }
 
-.contact-info a:hover {
-  text-decoration: underline;
-}
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .about-container {
+    padding: 15px; /* Adjust padding for smaller screens */
+  }
 
-/* Social Media Links */
-.social-links {
-  margin-top: 20px;
-}
+  .about-container h1 {
+    font-size: 2em; /* Adjust title size */
+  }
 
-.social-links a {
-  color: #00aaff;
-  text-decoration: none;
-  margin-right: 10px;
-}
-
-.social-links a:hover {
-  text-decoration: underline;
+  .about-container h2 {
+    font-size: 1.5em; /* Adjust heading size */
+  }
 }

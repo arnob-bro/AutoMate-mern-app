@@ -63,42 +63,44 @@ function AdminServiceManagement() {
       <AdminSidebar />
       <div className="admin-service-container">
         <h1>Existing Services</h1>
-        <table className="service-table">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>Type</th>
-              <th>Cost</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            {services.map((service) => (
-              <tr key={service._id}>
-                <td style={{ color: "black" }}>{service.name}</td>
-                <td style={{ color: "black" }}>{service.vehicleType}</td>
-                <td>
-                  <input
-                    type="number"
-                    value={service.cost}
-                    onChange={(e) =>
-                      handleServiceCostChange(service._id, e.target.value)
-                    }
-                  />
-                </td>
-                <td>
-                  <button onClick={() => updateServiceCost(service._id)}>
-                    Update Cost
-                  </button>
-                </td>
+        <div className="service-table-container">
+          <table className="service-table">
+            <thead>
+              <tr>
+                <th style={{ color: "black" }}>Name</th>
+                <th style={{ color: "black" }}>Type</th>
+                <th style={{ color: "black" }}>Cost</th>
+                <th style={{ color: "black" }}>Actions</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {services.map((service) => (
+                <tr key={service._id}>
+                  <td style={{ color: "black" }}>{service.name}</td>
+                  <td style={{ color: "black" }}>{service.vehicleType}</td>
+                  <td>
+                    <input
+                      type="number"
+                      value={service.cost}
+                      onChange={(e) =>
+                        handleServiceCostChange(service._id, e.target.value)
+                      }
+                    />
+                  </td>
+                  <td>
+                    <button onClick={() => updateServiceCost(service._id)}>
+                      Update Cost
+                    </button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
 
-        <h2>Add New Service</h2>
+        <h2 style={{ color: "orange" }}>Add New Service</h2>
         <div className="new-service-form">
-          <label>
+          <label style={{ color: "black" }}>
             Name:
             <input
               type="text"
@@ -108,7 +110,7 @@ function AdminServiceManagement() {
               }
             />
           </label>
-          <label>
+          <label style={{ color: "black" }}>
             Type:
             <select
               value={newService.vehicleType}
@@ -120,7 +122,7 @@ function AdminServiceManagement() {
               <option value="Bike">Bike</option>
             </select>
           </label>
-          <label>
+          <label style={{ color: "black" }}>
             Cost:
             <input
               type="number"

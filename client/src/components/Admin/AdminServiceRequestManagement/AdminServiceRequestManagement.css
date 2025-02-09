@@ -5,14 +5,17 @@ body {
 }
 
 .asrm-container {
-  background-color: #ffffff;
-  /* Neutral Color 1 */
+  background-color: #ffffff; /* Neutral Color 1 */
   border-radius: 8px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
   padding: 20px;
-  padding-left: 270px;
+  padding-left: 20px; /* Adjusted for smaller screens */
   flex-grow: 1;
   min-height: 100vh;
+  width: calc(100% - 250px); /* Add a max width */
+  margin-left: 250px; /* Center the container */
+  box-sizing: border-box; /* Ensure padding is included in width */
+  overflow: hidden; /* Prevent overflow */
 }
 
 /* Top Navigation Bar */
@@ -98,6 +101,8 @@ button:focus {
 /* Table */
 .asrm-content {
   margin-top: 20px;
+  overflow-x: auto; /* Allow horizontal scrolling if necessary */
+  /* Optional: Set a max-width here as well if needed */
 }
 
 .asrm-table {
@@ -183,31 +188,26 @@ button:focus {
 }
 
 /* Responsive Styles */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .asrm-container {
-    min-width: 100vw;
+    padding: 10px; /* Reduced padding for smaller screens */
+    width: 100%; /* Add a max width */
+    margin-left: 0px;
   }
+
   .top-navigation {
     flex-direction: column;
     align-items: flex-start;
   }
 
-  .top-navigation form {
-    width: 100%;
-    margin-top: 10px;
-    justify-content: space-between;
-  }
-
   .asrm-table th,
   .asrm-table td {
-    padding: 12px;
-    /* Adjusted for smaller screens */
+    padding: 12px; /* Adjusted for smaller screens */
     font-size: 12px;
   }
 
   button,
   .pagination button {
-    padding: 8px 14px;
-    /* Reduced padding for smaller screens */
+    padding: 8px 14px; /* Reduced padding for smaller screens */
   }
 }

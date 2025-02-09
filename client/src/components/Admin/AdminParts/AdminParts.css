@@ -169,7 +169,6 @@
 
 /* Media queries for responsive design */
 @media (max-width: 1024px) {
-
   .admin-parts,
   .admin-users,
   .admin-orders,
@@ -209,6 +208,7 @@
     /* Stack content vertically */
     align-items: center;
     text-align: center;
+    width: auto;
   }
 
   .part-box img {
@@ -221,8 +221,7 @@
   }
 }
 
-@media (max-width: 768px) {
-
+@media (max-width: 1024px) {
   .search-filters input,
   .search-filters select,
   .search-filters button {

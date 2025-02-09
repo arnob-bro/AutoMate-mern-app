@@ -15,22 +15,25 @@ const PurchasePart = () => {
   const [note, setNote] = useState("");
 
   const handleOrder = async () => {
-    try {
-      const userId = JSON.parse(localStorage.getItem("userData"))._id;
-      const response = await placeOrder(
-        viewingPart._id,
-        quantity,
-        userId,
-        paymentOption,
-        note
-      );
+    if (paymentOption != "") {
+      try {
+        const userId = JSON.parse(localStorage.getItem("userData"))._id;
+        const response = await placeOrder(
+          viewingPart._id,
+          quantity,
+          userId,
+          paymentOption,
+          note
+        );
 
-      const { paymentStatus } = response;
-      setMessage(`Order placed successfully. Payment Status: ${paymentStatus}`);
-      alert(`Order placed successfully. Payment Status: ${paymentStatus}`);
-      navigate(`/OrderHistory`);
-    } catch (error) {
-      setMessage("Failed to place order");
+        const { paymentStatus } = response;
+        setMessage(`Order placed successfully. `);
+        navigate(`/OrderHistory`);
+      } catch (error) {
+        setMessage("Failed to place order");
+      }
+    } else {
+      alert("Please fill up the fields");
     }
   };
 
@@ -86,7 +89,8 @@ const PurchasePart = () => {
                 className="payment-dropdown-PP"
               >
                 <option value="">Select Payment Option</option>
-                <option value="Cash On Delivery">Cash On Delivery</option>
+                {/* <option value="Cash On Delivery">Cash On Delivery</option> */}
+                <option value="SSLCommerz">SSLCommerz</option>
               </select>
             </div>
             <div className="input-section-PP">

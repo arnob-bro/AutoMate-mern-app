@@ -18,6 +18,7 @@ import AdminServiceRequestManagement from "./components/Admin/AdminServiceReques
 import AdminServiceManagement from "./components/Admin/AdminServiceManagement/AdminServiceManagement.jsx";
 import Profile from "./components/UserProfile/UserProfile.jsx";
 import ServiceHistory from "./components/ServiceHistory/ServiceHistory.jsx";
+import PaymentSuccess from "./components/PaymentSuccess/PaymentSuccess.jsx";
 
 function App() {
   return (
@@ -49,6 +50,10 @@ function App() {
         />
         <Route path="/profile" element={<Profile />} />
         <Route path="/service-history" element={<ServiceHistory />} />
+        <Route
+          path="/order/payment/success/:tranId"
+          element={<PaymentSuccess />}
+        />
       </Routes>
     </Router>
   );
