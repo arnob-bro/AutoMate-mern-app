@@ -2,12 +2,18 @@ import React from "react";
 import { useLocation } from "react-router-dom";
 import "./PartDetails.css";
 import Navbar from "../navbar/navbar";
+import { useNavigate } from "react-router-dom";
 
 const PartDetails = () => {
   const location = useLocation();
-  const viewingPart = location.state?.part;
+  const part = location.state?.part;
+  const navigate = useNavigate();
 
-  if (!viewingPart) return <p>Loading...</p>;
+  const handlePartPurchase = (part) => {
+    navigate(`/PurchasePart`, { state: { part } }); // Navigate to the details page
+  };
+
+  if (!part) return <p>Loading...</p>;
 
   return (
     <div>
@@ -15,27 +21,34 @@ const PartDetails = () => {
       <div className="part-details-container">
         <div className="part-image-section">
           <img
-            src={viewingPart.image}
-            alt={viewingPart.name}
+            src={part.image}
+            alt={part.name}
             className="part-image-details"
           />
         </div>
         <div className="part-info-section">
-          <h1>{viewingPart.name}</h1>
+          <h1>{part.name}</h1>
           <p>
-            <strong>Price:</strong> ${viewingPart.price}
+            <strong>Price:</strong> ${part.price}
           </p>
           <p>
             <strong>Availability:</strong>{" "}
-            {viewingPart.isAvailable === "Yes" ? "Available" : "Not Available"}
+            {part.isAvailable === "Yes" ? "Available" : "Not Available"}
           </p>
           <p>
-            <strong>Description:</strong> {viewingPart.shortDescription}
+            <strong>Description:</strong> {part.shortDescription}
           </p>
           <p>
-            <strong>Long Description:</strong> {viewingPart.longDescription}
+            <strong>Long Description:</strong> {part.longDescription}
           </p>
-          <button>Buy</button>
+          <button
+            onClick={(e) => {
+              e.stopPropagation();
+              handlePartPurchase(part);
+            }}
+          >
+            Buy
+          </button>
         </div>
         <div className="box4">
           <div className="contactUs">

@@ -2,9 +2,12 @@ import React, { useState, useEffect } from "react";
 import { fetchOrders, updateOrder } from "../../../Api/adminPanel"; // Import API functions
 import "./AdminOrderManagement.css";
 import { AdminSidebar } from "../AdminSidebar/AdminSidebar";
+import Skeleton from "@mui/material/Skeleton"; // Import Skeleton from Material-UI
+import Box from "@mui/material/Box";
 
 const AdminOrderManagement = () => {
   const [orders, setOrders] = useState([]);
+  const [loading, setLoading] = useState(true); // Add loading state
   const [paymentStatusFilter, setPaymentStatusFilter] = useState("");
   const [statusFilter, setStatusFilter] = useState("");
   const [page, setPage] = useState(1);
@@ -16,6 +19,7 @@ const AdminOrderManagement = () => {
   }, [paymentStatusFilter, statusFilter, page]);
 
   const fetchOrderData = async () => {
+    setLoading(true); // Start loading
     try {
       const data = await fetchOrders(
         page,
@@ -27,6 +31,8 @@ const AdminOrderManagement = () => {
       setTotalPages(data.totalPages);
     } catch (error) {
       console.error("Error fetching orders:", error);
+    } finally {
+      setLoading(false); // Stop loading
     }
   };
 
@@ -99,7 +105,19 @@ const AdminOrderManagement = () => {
           </form>
         </div>
 
-        {orders.length === 0 ? (
+        {loading ? (
+          // Skeleton Loader
+          <Box>
+            {[...Array(5)].map((_, index) => (
+              <Box key={index} mb={2} p={2} className="admin-order-item">
+                <Skeleton variant="text" width="60%" height={30} />
+                <Skeleton variant="text" width="40%" height={30} />
+                <Skeleton variant="text" width="80%" height={30} />
+                <Skeleton variant="rectangular" width="100%" height={50} />
+              </Box>
+            ))}
+          </Box>
+        ) : orders.length === 0 ? (
           <p style={{ color: "black" }}>No orders available.</p>
         ) : (
           orders.map((order) => (

@@ -1,129 +1,135 @@
 .admin-container {
-    display: flex;
+  display: flex;
 }
 
 .admin-service-container {
-    padding: 30px;
-    background-color:#e7f3fe;
-    width: calc(100% - 250px);
-    margin-left: 250px;
-    /* Offset for the sidebar */
-    box-sizing: border-box;
-    min-height: 100vh;
-    /* Ensure container takes full height */
-    transition: margin-left 0.3s ease;
+  padding: 30px;
+  background-color: #e7f3fe;
+  width: calc(100% - 250px);
+  margin-left: 250px;
+  /* Offset for the sidebar */
+  box-sizing: border-box;
+  min-height: 100vh;
+  /* Ensure container takes full height */
+  transition: margin-left 0.3s ease;
 }
 
 .admin-service-container h1,
 .admin-service-container h2 {
-    color: rgb(14, 14, 83);
-    margin-bottom: 15px;
-    font-size: 32px;
-    /* Slightly larger for emphasis */
-    text-align: center;
-    /* Center the headings */
+  color: rgb(14, 14, 83);
+  margin-bottom: 15px;
+  font-size: 32px;
+  /* Slightly larger for emphasis */
+  text-align: center;
+  /* Center the headings */
+}
+
+/* Wrap the table in a container */
+.service-table-container {
+  width: 100%;
+  overflow-x: auto; /* Allow horizontal scrolling */
 }
 
 .service-table {
-    width: 100%;
-    border-collapse: collapse;
-    margin-bottom: 30px;
-    /* More space below the table */
-    background-color: white;
-    /* White background for the service list */
-    border-radius: 8px;
-    /* Rounded corners */
-    overflow: hidden;
-    /* Prevent overflow */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    /* Subtle shadow for depth */
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 30px;
+  background-color: white;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  min-width: 600px; /* Ensures the table retains a reasonable width */
 }
 
 .service-table th,
 .service-table td {
-    padding: 15px;
-    border: 1px solid #ddd;
-    text-align: left;
+  padding: 15px;
+  border: 1px solid #ddd;
+  text-align: left;
 }
 
 .service-table th {
-    background-color: rgb(14, 14, 83);
-    color: white;
+  background-color: rgb(14, 14, 83);
+  color: white;
 }
 
 .new-service-form {
-    display: flex;
-    flex-direction: row;
-    /* Arrange input boxes in a single row */
-    align-items: center;
-    /* Center items vertically */
-    margin-bottom: 20px;
-    /* Space below the form */
-    justify-content: center;
-    /* Center the form horizontally */
+  display: flex;
+  flex-direction: row;
+  /* Arrange input boxes in a single row */
+  align-items: center;
+  /* Center items vertically */
+  margin-bottom: 20px;
+  /* Space below the form */
+  justify-content: center;
+  /* Center the form horizontally */
 }
 
 .new-service-form label {
-    margin: 0 10px;
-    /* Space around labels */
-    font-weight: bold;
-    /* Bold labels for emphasis */
+  margin: 0 10px;
+  /* Space around labels */
+  font-weight: bold;
+  /* Bold labels for emphasis */
 }
 
 .new-service-form input,
 .new-service-form select {
-    padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    margin-right: 10px;
-    /* Space between input elements */
-    width: 150px;
-    /* Fixed width for better alignment */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-right: 10px;
+  /* Space between input elements */
+  width: 150px;
+  /* Fixed width for better alignment */
 }
 
 .new-service-form button {
-    background-color: #ff8c00;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
+  background-color: #ff8c00;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
 .new-service-form button:hover {
-    background-color: #e67e00;
+  background-color: #e67e00;
 }
 
 /* Media Queries */
-@media (max-width: 768px) {
-    .admin-service-container {
-        margin-left: 0;
-        /* Sidebar hidden on small screens */
-        width: 100%;
-        padding: 15px;
-        /* Reduced padding on smaller screens */
-    }
+@media (max-width: 1024px) {
+  .admin-container {
+    flex-direction: column;
+  }
 
-    .new-service-form {
-        flex-direction: column;
-        /* Stack inputs on smaller screens */
-        align-items: flex-start;
-        /* Align items to the start */
-    }
+  .admin-service-container {
+    margin-left: 0;
+    /* Sidebar hidden on small screens */
+    width: 100%;
+    padding: 15px;
+    /* Reduced padding on smaller screens */
+  }
 
-    .new-service-form label {
-        margin-bottom: 5px;
-        /* Space below labels */
-    }
+  .new-service-form {
+    flex-direction: column;
+    /* Stack inputs on smaller screens */
+    align-items: flex-start;
+    /* Align items to the start */
+  }
 
-    .new-service-form input,
-    .new-service-form select {
-        width: 100%;
-        /* Full width on smaller screens */
-        margin-right: 0;
-        /* Reset margin on smaller screens */
-        margin-bottom: 10px;
-        /* Space below inputs */
-    }
+  .new-service-form label {
+    margin-bottom: 5px;
+    /* Space below labels */
+  }
+
+  .new-service-form input,
+  .new-service-form select {
+    width: 100%;
+    /* Full width on smaller screens */
+    margin-right: 0;
+    /* Reset margin on smaller screens */
+    margin-bottom: 10px;
+    /* Space below inputs */
+  }
 }

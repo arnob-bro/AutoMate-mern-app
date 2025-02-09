@@ -48,22 +48,34 @@ const Navbar = () => {
 
       <ul className={`navMenu ${menuOpen ? "show-menu" : ""}`}>
         <li>
-          <NavLink to="/home" className={({ isActive }) => (isActive ? "active" : "")}>
+          <NavLink
+            to="/home"
+            className={({ isActive }) => (isActive ? "active" : "")}
+          >
             Home
           </NavLink>
         </li>
         <li>
-          <NavLink to="/services" className={({ isActive }) => (isActive ? "active" : "")}>
+          <NavLink
+            to="/services"
+            className={({ isActive }) => (isActive ? "active" : "")}
+          >
             Book Now
           </NavLink>
         </li>
         <li>
-          <NavLink to="/parts" className={({ isActive }) => (isActive ? "active" : "")}>
+          <NavLink
+            to="/parts"
+            className={({ isActive }) => (isActive ? "active" : "")}
+          >
             Parts
           </NavLink>
         </li>
         <li>
-          <NavLink to="/about-us" className={({ isActive }) => (isActive ? "active" : "")}>
+          <NavLink
+            to="/about-us"
+            className={({ isActive }) => (isActive ? "active" : "")}
+          >
             About Us
           </NavLink>
         </li>
@@ -71,32 +83,45 @@ const Navbar = () => {
         {/* Dropdown for History */}
         <li className="navDropdown" onClick={toggleDropdown}>
           <span className="dropdown-toggle">Purchase & Booking History</span>
-          {dropdownOpen && (
-            <ul className="dropdown-menu">
-              <li>
-                <NavLink to="/OrderHistory" className={({ isActive }) => (isActive ? "active" : "")}>
-                  Order History
-                </NavLink>
-              </li>
-              <li>
-                <NavLink to="/service-history" className={({ isActive }) => (isActive ? "active" : "")}>
-                  Service History
-                </NavLink>
-              </li>
-            </ul>
-          )}
+          <ul
+            className={`dropdown-menu ${dropdownOpen ? "show-dropdown" : ""}`}
+          >
+            <li>
+              <NavLink
+                to="/OrderHistory"
+                className={({ isActive }) => (isActive ? "active" : "")}
+              >
+                Order History
+              </NavLink>
+            </li>
+            <li>
+              <NavLink
+                to="/service-history"
+                className={({ isActive }) => (isActive ? "active" : "")}
+              >
+                Service History
+              </NavLink>
+            </li>
+          </ul>
         </li>
 
         {isAdmin && (
           <li>
-            <NavLink to="/admin-page" className={({ isActive }) => (isActive ? "active" : "")}>
+            <NavLink
+              to="/admin-page"
+              className={({ isActive }) => (isActive ? "active" : "")}
+            >
               Admin
             </NavLink>
           </li>
         )}
 
         <li>
-          <NavLink to="/" onClick={handleLogout} className={({ isActive }) => (isActive ? "active" : "")}>
+          <NavLink
+            to="/"
+            onClick={handleLogout}
+            className={({ isActive }) => (isActive ? "active" : "")}
+          >
             Logout
           </NavLink>
         </li>

@@ -1,95 +1,93 @@
 /* AdminSidebar.css */
 .admin-sidebar {
-    width: 250px;
-    background-color: rgb(7, 7, 57);
-    color: white;
-    height: 100vh;
-    position: fixed;
-    overflow-y: auto;
-    transition: max-height 0.3s ease;
-    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+  width: 250px;
+  background-color: rgb(7, 7, 57);
+  color: white;
+  height: 100vh;
+  position: fixed;
+  overflow-y: auto;
+  transition: max-height 0.3s ease;
+  box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
 }
 
-.logo-link{
-    text-decoration: none;
+.logo-link {
+  text-decoration: none;
 }
-
-
 
 .admin-sidebar.collapsed {
-    max-height: 0;
-    overflow: hidden;
+  max-height: 0;
+  overflow: hidden;
 }
 
 .sidebar-toggle {
-    display: none;
-    cursor: pointer;
-    background-color: rgb(7, 7, 57);
-    color: white;
-    padding: 10px;
-    text-align: center;
+  display: none;
+  cursor: pointer;
+  background-color: rgb(7, 7, 57);
+  color: white;
+  padding: 10px;
+  text-align: center;
 }
 
 .admin-sidebar ul {
-    list-style: none;
-    padding: 0;
-    /* Remove default padding */
+  list-style: none;
+  padding: 0;
+  /* Remove default padding */
 }
 
 .admin-sidebar ul li {
-    margin: 20px 0;
-    padding: 10px 20px;
-    /* Combined padding */
-    cursor: pointer;
-    transition: background-color 0.3s;
-    /* Smooth background transition */
+  margin: 20px 0;
+  padding: 10px 20px;
+  /* Combined padding */
+  cursor: pointer;
+  transition: background-color 0.3s;
+  /* Smooth background transition */
 }
 
 .admin-sidebar ul li:hover {
-    background-color: rgba(255, 255, 255, 0.1);
-    /* Hover effect */
+  background-color: rgba(255, 255, 255, 0.1);
+  /* Hover effect */
 }
 
 .admin-sidebar ul li a {
-    color: white;
-    text-decoration: none;
-    display: block;
-    /* Make the whole list item clickable */
+  color: white;
+  text-decoration: none;
+  display: block;
+  /* Make the whole list item clickable */
 }
 
 .admin-sidebar ul li a.active {
-    color: bisque;
+  color: bisque;
 }
 
 .name {
-    color: rgb(255, 136, 0);
-    padding: 20px;
-    cursor: pointer;
-    transition: color 0.3s ease;
+  color: rgb(255, 136, 0);
+  padding: 20px;
+  cursor: pointer;
+  transition: color 0.3s ease;
 }
 
 .name:hover {
-    color: rgb(223, 88, 30);
+  color: rgb(223, 88, 30);
 }
 
 .underline {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-    /* Improved underline styling */
-    margin: 20px 0;
-    /* Add margin for spacing */
+  border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+  /* Improved underline styling */
+  margin: 20px 0;
+  /* Add margin for spacing */
 }
 
 /* Media Queries */
 @media (max-width: 768px) {
-    .admin-sidebar {
-        position: static;
-        width: 100%;
-        max-height: none;
-        /* Reset max-height for mobile */
-    }
+  .admin-sidebar {
+    position: static;
+    width: 100%;
+    max-height: none;
+    /* Reset max-height for mobile */
+  }
 
-    .sidebar-toggle {
-        display: block;
-        /* Show toggle button */
-    }
+  .sidebar-toggle {
+    display: block;
+    /* Show toggle button */
+  }
 }
